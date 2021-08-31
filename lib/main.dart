@@ -30,15 +30,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var titleSection = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('테스트 텍스트 1'),
-            Text('테스트 텍스트 2'),
+            Text('테스트 텍스트 1',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26)),
+            Text('테스트 텍스트 2',
+                style: TextStyle(color: Colors.grey, fontSize: 26)),
           ],
         ),
-        Icon(Icons.star),
-        Text('tutorial')
+        Padding(padding: EdgeInsets.all(20.0)),
+        Icon(
+          Icons.star,
+          size: 35,
+          color: Colors.deepOrange,
+        ),
+        Text('tutorial', style: TextStyle(fontSize: 30))
       ],
     );
     var buttonSection = Row(
