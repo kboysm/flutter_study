@@ -1,16 +1,10 @@
-# first_flutter_project
+## memo
 
-A new Flutter project.
+Scaffold -> body -> ListView -> physics : 여러가지 리스트 에니메이션을 간단한 옵션을 통해 사용할 수 있음,
+스타일을 줄 때 :
+  EdgeInsets.all() : top, right, bottom, left 를 전부 적용
+  EdgeInsets.only() : 함수의 인자로 left:25 , right:25 등을 통해 특정 부분만 적용 가능
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+라우트 이동 : 
+    Navigator.push(): 함수를 통해 해당 클래스를 호출하여 이동할 수 있음
+    
