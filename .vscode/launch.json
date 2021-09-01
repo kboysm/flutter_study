@@ -5,15 +5,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "first_flutter_project",
-      "request": "launch",
-      "type": "dart"
-    },
-    {
-      "name": "first_flutter_project (profile mode)",
+      "name": "web",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "profile"
+      "args": [
+        "-d",
+        "chrome"
+      ]
+    },
+    {
+      "name": "device",
+      "request": "launch",
+      "type": "dart",
     }
   ]
 }
