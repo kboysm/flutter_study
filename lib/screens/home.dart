@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'edit.dart';
 import '../database/memo.dart';
 import '../database/db.dart';
+import 'view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -103,7 +104,12 @@ class _MyHomePageState extends State<MyHomePage> {
             itemBuilder: (context, index) {
               Memo memo = (projectSnap.data as List)[index];
               return InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      parentContext,
+                      CupertinoPageRoute(
+                          builder: (context) => ViewPage(id: memo.id)));
+                },
                 onLongPress: () {
                   deleteId = memo.id;
                   shwAlertDialog(parentContext);
@@ -132,8 +138,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Text(memo.title,
                                 style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500)),
-                            Text(memo.text, style: TextStyle(fontSize: 15)),
+                                    fontSize: 20, fontWeight: FontWeight.w500),
+                                    overflow: TextOverflow.ellipsis, // 텍스트가 해당 박스의 크기를 넘어버리는 양이라면 적절한곳에서 끊어주고 ... 으로 처리해주는 옵션
+                            ),
+                            Text(memo.text, style: TextStyle(fontSize: 15),overflow: TextOverflow.ellipsis),
                           ],
                         ),
                         Column(
